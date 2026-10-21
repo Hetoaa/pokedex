@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import requests
 from schemas.pokemon import Pokemon
+from db.database import get_connection
 
 app = FastAPI()
 
