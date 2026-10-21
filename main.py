@@ -24,7 +24,7 @@ def getHealth ():
 
 #Fonction GET Pokemon qui permet de trouver un pokemon en fonction de son numéro "ID"
 
-@app.get("/pokemons/{number}")           
+@app.get("/pokemons/{number}", response_model=Pokemon)           
 def getPokemon (number: int):
     url = f"https://pokeapi.co/api/v2/pokemon/{number}" #On vient pointer sur l'url avec le numéro choisit sur Postman
     response = requests.get(url)        #On vient stocker toutes les données dans la variable "response"
