@@ -1,20 +1,8 @@
 from fastapi import FastAPI
 import requests
-from pydantic import BaseModel
+from schemas.pokemon import Pokemon
 
 app = FastAPI()
-
-#Modèle Pydantic pour données Pokémon
-
-class Pokemon(BaseModel):
-    number: int
-    name: str
-    name_fr: str
-    types: list[str]
-    image_url: str
-    heigth: int
-    weigth: int
-    evolves_from_number: int | None = None
 
 #Fonction GET Health qui permet d'avoir le status de l'API
 
