@@ -11,5 +11,5 @@ class Pokemon(BaseModel):
     image_url: str
     heigth: int
     weigth: int
-    evolves_from_number: int | None = None
+    evolves_from_number: int | None
 
