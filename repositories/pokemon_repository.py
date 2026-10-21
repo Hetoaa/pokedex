@@ -1,11 +1,9 @@
 import json
 
-
 def get_pokemon_by_number(connexion, number):
     cursor = connexion.cursor()
     cursor.execute("SELECT * FROM pokemon WHERE number = ?", (number,))
     return cursor.fetchone()
-
 
 def save_pokemon(connexion, pokemon):
     cursor = connexion.cursor()
@@ -19,7 +17,7 @@ def save_pokemon(connexion, pokemon):
             pokemon["number"],
             pokemon["name"],
             pokemon["name_fr"],
-            json.dumps(pokemon["types"], ensure_ascii=False),
+            json.dumps(pokemon["types"], ensure_ascii=False), #Permet de mettre le type sous forme de texte et ascii pour les caractères
             pokemon["image_url"],
             pokemon["height"],
             pokemon["weight"],
